@@ -6,22 +6,37 @@ public class SimpleActionApp {
 
   public static void main(String[] args) {
 
-    // Anonymous Function
-    SimpleAction simpleAction1 = new SimpleAction() {
+    // // Anonymous Function
+    // SimpleAction simpleAction1 = new SimpleAction() {
 
-      @Override
-      public String action() {
-        return "Anonymous";
-      }
+    // @Override
+    // public String action(String name) {
+    // return "Anonymous";
+    // }
+    // };
+
+    // System.out.println(simpleAction1.action("Herman"));
+
+    // // Lambda
+    // SimpleAction simpleAction2 = (String name) -> {
+    // return "Lambda";
+    // };
+
+    // System.out.println(simpleAction2.action("Herman"));
+
+    SimpleAction simpleAction1 = (String name) -> {
+      return "Hello " + name;
     };
 
-    System.out.println(simpleAction1.action());
-
-    // Lambda
-    SimpleAction simpleAction2 = () -> {
-      return "Lambda";
+    SimpleAction simpleAction2 = (name) -> {
+      return "Hello " + name;
     };
 
-    System.out.println(simpleAction2.action());
+    SimpleAction simpleAction3 = (String name) -> "Hello " + name;
+
+    SimpleAction simpleAction4 = (name) -> "Hello " + name;
+
+    SimpleAction simpleAction5 = name -> "Hello " + name;
   }
+
 }
